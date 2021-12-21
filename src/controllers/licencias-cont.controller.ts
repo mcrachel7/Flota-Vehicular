@@ -1,30 +1,26 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Licencias} from '../models';
 import {LicenciasRepository} from '../repositories';
 
+@authenticate('jwt')
 export class LicenciasContController {
   constructor(
     @repository(LicenciasRepository)
-    public licenciasRepository : LicenciasRepository,
-  ) {}
+    public licenciasRepository: LicenciasRepository,
+  ) { }
 
   @post('/licencias')
   @response(200, {
