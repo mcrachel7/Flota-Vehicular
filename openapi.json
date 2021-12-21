@@ -1,0 +1,3428 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "flota-vehicular",
+    "version": "0.0.1",
+    "description": "Rest Api para Flota Vehicular",
+    "contact": {
+      "name": "mcrachel7",
+      "email": "mcrachel79@unitec.edu"
+    }
+  },
+  "paths": {
+    "/licencias/count": {
+      "get": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "count",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Licencias.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Licencias>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasContController.count"
+      }
+    },
+    "/licencias/{id}": {
+      "put": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Licencias"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LicenciasContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenciasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LicenciasContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicenciasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "LicenciasContController.deleteById"
+      }
+    },
+    "/licencias": {
+      "post": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "create",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLicencias"
+              }
+            }
+          }
+        },
+        "operationId": "LicenciasContController.create"
+      },
+      "patch": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Licencias.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Licencias>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenciasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "LicenciasContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "LicenciasContController",
+        "x-operation-name": "find",
+        "tags": [
+          "LicenciasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Licencias model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicenciasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasContController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/posiciones/count": {
+      "get": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "count",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Posiciones model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Posiciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Posiciones>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "PosicionesContController.count"
+      }
+    },
+    "/posiciones/{id}": {
+      "put": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Posiciones PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Posiciones"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "PosicionesContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Posiciones PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PosicionesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "PosicionesContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Posiciones model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PosicionesWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posiciones.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "PosicionesContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Posiciones DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "PosicionesContController.deleteById"
+      }
+    },
+    "/posiciones": {
+      "post": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "create",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Posiciones model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posiciones"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPosiciones"
+              }
+            }
+          }
+        },
+        "operationId": "PosicionesContController.create"
+      },
+      "patch": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Posiciones PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Posiciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Posiciones>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PosicionesPartial"
+              }
+            }
+          }
+        },
+        "operationId": "PosicionesContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "PosicionesContController",
+        "x-operation-name": "find",
+        "tags": [
+          "PosicionesContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Posiciones model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PosicionesWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posiciones.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "PosicionesContController.find"
+      }
+    },
+    "/rutas/count": {
+      "get": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "count",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Rutas model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Rutas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Rutas>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RutasContController.count"
+      }
+    },
+    "/rutas/{id}": {
+      "put": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Rutas PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rutas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RutasContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Rutas PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RutasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RutasContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Rutas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RutasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rutas.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RutasContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Rutas DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "RutasContController.deleteById"
+      }
+    },
+    "/rutas": {
+      "post": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "create",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Rutas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rutas"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRutas"
+              }
+            }
+          }
+        },
+        "operationId": "RutasContController.create"
+      },
+      "patch": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Rutas PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Rutas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Rutas>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RutasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "RutasContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "RutasContController",
+        "x-operation-name": "find",
+        "tags": [
+          "RutasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Rutas model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RutasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rutas.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RutasContController.find"
+      }
+    },
+    "/signup": {
+      "post": {
+        "x-controller-name": "UsersController",
+        "x-operation-name": "signUp",
+        "tags": [
+          "UsersController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUser"
+              }
+            }
+          }
+        },
+        "operationId": "UsersController.signUp"
+      }
+    },
+    "/tipo-vehiculos/count": {
+      "get": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "count",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoVehiculo model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoVehiculo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoVehiculo>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoContController.count"
+      }
+    },
+    "/tipo-vehiculos/{id}": {
+      "put": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoVehiculo PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoVehiculo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipovehiculoContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoVehiculo PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoVehiculoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipovehiculoContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoVehiculo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoVehiculoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoVehiculo.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoVehiculo DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TipovehiculoContController.deleteById"
+      }
+    },
+    "/tipo-vehiculos": {
+      "post": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "create",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoVehiculo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoVehiculo"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipoVehiculo"
+              }
+            }
+          }
+        },
+        "operationId": "TipovehiculoContController.create"
+      },
+      "patch": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoVehiculo PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoVehiculo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoVehiculo>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoVehiculoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "TipovehiculoContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "TipovehiculoContController",
+        "x-operation-name": "find",
+        "tags": [
+          "TipovehiculoContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of TipoVehiculo model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoVehiculoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoVehiculo.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoContController.find"
+      }
+    },
+    "/transportistas/count": {
+      "get": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "count",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Transportistas model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Transportistas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Transportistas>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TransportistasContController.count"
+      }
+    },
+    "/transportistas/{id}": {
+      "put": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Transportistas PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transportistas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TransportistasContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Transportistas PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransportistasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TransportistasContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Transportistas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransportistasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transportistas.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TransportistasContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Transportistas DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TransportistasContController.deleteById"
+      }
+    },
+    "/transportistas": {
+      "post": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "create",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Transportistas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transportistas"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTransportistas"
+              }
+            }
+          }
+        },
+        "operationId": "TransportistasContController.create"
+      },
+      "patch": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Transportistas PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Transportistas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Transportistas>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransportistasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "TransportistasContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "TransportistasContController",
+        "x-operation-name": "find",
+        "tags": [
+          "TransportistasContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Transportistas model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransportistasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transportistas.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TransportistasContController.find"
+      }
+    },
+    "/users/login": {
+      "post": {
+        "x-controller-name": "UsersController",
+        "x-operation-name": "login",
+        "tags": [
+          "UsersController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "minLength": 8
+                  }
+                }
+              }
+            }
+          },
+          "description": "The input of login function",
+          "required": true
+        },
+        "operationId": "UsersController.login"
+      }
+    },
+    "/vehiculos/count": {
+      "get": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "count",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Vehiculos model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Vehiculos.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Vehiculos>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "VehiculosContController.count"
+      }
+    },
+    "/vehiculos/{id}": {
+      "put": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Vehiculos PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Vehiculos"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "VehiculosContController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Vehiculos PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VehiculosPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "VehiculosContController.updateById"
+      },
+      "get": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "findById",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Vehiculos model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiculosWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vehiculos.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "VehiculosContController.findById"
+      },
+      "delete": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Vehiculos DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "VehiculosContController.deleteById"
+      }
+    },
+    "/vehiculos": {
+      "post": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "create",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Vehiculos model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vehiculos"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewVehiculos"
+              }
+            }
+          }
+        },
+        "operationId": "VehiculosContController.create"
+      },
+      "patch": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Vehiculos PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Vehiculos.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Vehiculos>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VehiculosPartial"
+              }
+            }
+          }
+        },
+        "operationId": "VehiculosContController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "VehiculosContController",
+        "x-operation-name": "find",
+        "tags": [
+          "VehiculosContController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Vehiculos model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VehiculosWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vehiculos.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "VehiculosContController.find"
+      }
+    },
+    "/whoAmI": {
+      "get": {
+        "x-controller-name": "UsersController",
+        "x-operation-name": "whoAmI",
+        "tags": [
+          "UsersController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Return current user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "UsersController.whoAmI"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Licencias": {
+        "title": "Licencias",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Liviana": {
+            "type": "string"
+          },
+          "Pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Liviana",
+          "Pesada"
+        ],
+        "additionalProperties": true
+      },
+      "NewLicencias": {
+        "title": "NewLicencias",
+        "type": "object",
+        "description": "(tsType: Omit<Licencias, 'id'>, schemaOptions: { title: 'NewLicencias', exclude: [ 'id' ] })",
+        "properties": {
+          "Liviana": {
+            "type": "string"
+          },
+          "Pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Liviana",
+          "Pesada"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<Licencias, 'id'>"
+      },
+      "LicenciasWithRelations": {
+        "title": "LicenciasWithRelations",
+        "type": "object",
+        "description": "(tsType: LicenciasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Liviana": {
+            "type": "string"
+          },
+          "Pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Liviana",
+          "Pesada"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "LicenciasWithRelations"
+      },
+      "LicenciasPartial": {
+        "title": "LicenciasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Licencias>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Liviana": {
+            "type": "string"
+          },
+          "Pesada": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Licencias>"
+      },
+      "Posiciones": {
+        "title": "Posiciones",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Latitud": {
+            "type": "number"
+          },
+          "Longitud": {
+            "type": "number"
+          },
+          "Altitud": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Latitud",
+          "Longitud",
+          "Altitud"
+        ],
+        "additionalProperties": true
+      },
+      "NewPosiciones": {
+        "title": "NewPosiciones",
+        "type": "object",
+        "description": "(tsType: Omit<Posiciones, 'id'>, schemaOptions: { title: 'NewPosiciones', exclude: [ 'id' ] })",
+        "properties": {
+          "Latitud": {
+            "type": "number"
+          },
+          "Longitud": {
+            "type": "number"
+          },
+          "Altitud": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Latitud",
+          "Longitud",
+          "Altitud"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<Posiciones, 'id'>"
+      },
+      "PosicionesWithRelations": {
+        "title": "PosicionesWithRelations",
+        "type": "object",
+        "description": "(tsType: PosicionesWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Latitud": {
+            "type": "number"
+          },
+          "Longitud": {
+            "type": "number"
+          },
+          "Altitud": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Latitud",
+          "Longitud",
+          "Altitud"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "PosicionesWithRelations"
+      },
+      "PosicionesPartial": {
+        "title": "PosicionesPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Posiciones>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Latitud": {
+            "type": "number"
+          },
+          "Longitud": {
+            "type": "number"
+          },
+          "Altitud": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Posiciones>"
+      },
+      "Rutas": {
+        "title": "Rutas",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Distancia": {
+            "type": "number"
+          },
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Distancia",
+          "lugar_inicio",
+          "lugar_final"
+        ],
+        "additionalProperties": true
+      },
+      "NewRutas": {
+        "title": "NewRutas",
+        "type": "object",
+        "description": "(tsType: Omit<Rutas, 'y'>, schemaOptions: { title: 'NewRutas', exclude: [ 'y' ] })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Distancia": {
+            "type": "number"
+          },
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Distancia",
+          "lugar_inicio",
+          "lugar_final"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<Rutas, 'y'>"
+      },
+      "RutasWithRelations": {
+        "title": "RutasWithRelations",
+        "type": "object",
+        "description": "(tsType: RutasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Distancia": {
+            "type": "number"
+          },
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Distancia",
+          "lugar_inicio",
+          "lugar_final"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "RutasWithRelations"
+      },
+      "RutasPartial": {
+        "title": "RutasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Rutas>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Distancia": {
+            "type": "number"
+          },
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Rutas>"
+      },
+      "TipoVehiculo": {
+        "title": "TipoVehiculo",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true
+      },
+      "NewTipoVehiculo": {
+        "title": "NewTipoVehiculo",
+        "type": "object",
+        "description": "(tsType: Omit<TipoVehiculo, 'y'>, schemaOptions: { title: 'NewTipoVehiculo', exclude: [ 'y' ] })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<TipoVehiculo, 'y'>"
+      },
+      "TipoVehiculoWithRelations": {
+        "title": "TipoVehiculoWithRelations",
+        "type": "object",
+        "description": "(tsType: TipoVehiculoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "TipoVehiculoWithRelations"
+      },
+      "TipoVehiculoPartial": {
+        "title": "TipoVehiculoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<TipoVehiculo>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<TipoVehiculo>"
+      },
+      "Transportistas": {
+        "title": "Transportistas",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Nombre": {
+            "type": "string"
+          },
+          "Licencias": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Nombre",
+          "Licencias"
+        ],
+        "additionalProperties": true
+      },
+      "NewTransportistas": {
+        "title": "NewTransportistas",
+        "type": "object",
+        "description": "(tsType: Omit<Transportistas, 'id'>, schemaOptions: { title: 'NewTransportistas', exclude: [ 'id' ] })",
+        "properties": {
+          "Nombre": {
+            "type": "string"
+          },
+          "Licencias": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Nombre",
+          "Licencias"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<Transportistas, 'id'>"
+      },
+      "TransportistasWithRelations": {
+        "title": "TransportistasWithRelations",
+        "type": "object",
+        "description": "(tsType: TransportistasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Nombre": {
+            "type": "string"
+          },
+          "Licencias": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Nombre",
+          "Licencias"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "TransportistasWithRelations"
+      },
+      "TransportistasPartial": {
+        "title": "TransportistasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Transportistas>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Nombre": {
+            "type": "string"
+          },
+          "Licencias": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Transportistas>"
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "emailVerified": {
+            "type": "boolean"
+          },
+          "verificationToken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "additionalProperties": true
+      },
+      "NewUser": {
+        "title": "NewUser",
+        "type": "object",
+        "description": "(tsType: NewUserRequest, schemaOptions: { title: 'NewUser' })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "emailVerified": {
+            "type": "boolean"
+          },
+          "verificationToken": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "NewUserRequest"
+      },
+      "NewUserRequest": {
+        "title": "NewUserRequest",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "emailVerified": {
+            "type": "boolean"
+          },
+          "verificationToken": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "additionalProperties": true
+      },
+      "Vehiculos": {
+        "title": "Vehiculos",
+        "type": "object",
+        "properties": {
+          "id_placa": {
+            "type": "string"
+          },
+          "Color": {
+            "type": "string"
+          },
+          "Marca": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Color",
+          "Marca",
+          "tipo"
+        ],
+        "additionalProperties": true
+      },
+      "NewVehiculos": {
+        "title": "NewVehiculos",
+        "type": "object",
+        "description": "(tsType: Omit<Vehiculos, 'id'>, schemaOptions: { title: 'NewVehiculos', exclude: [ 'id' ] })",
+        "properties": {
+          "id_placa": {
+            "type": "string"
+          },
+          "Color": {
+            "type": "string"
+          },
+          "Marca": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Color",
+          "Marca",
+          "tipo"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Omit<Vehiculos, 'id'>"
+      },
+      "VehiculosWithRelations": {
+        "title": "VehiculosWithRelations",
+        "type": "object",
+        "description": "(tsType: VehiculosWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id_placa": {
+            "type": "string"
+          },
+          "Color": {
+            "type": "string"
+          },
+          "Marca": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Color",
+          "Marca",
+          "tipo"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "VehiculosWithRelations"
+      },
+      "VehiculosPartial": {
+        "title": "VehiculosPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Vehiculos>, schemaOptions: { partial: true })",
+        "properties": {
+          "id_placa": {
+            "type": "string"
+          },
+          "Color": {
+            "type": "string"
+          },
+          "Marca": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Vehiculos>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Licencias.Filter": {
+        "type": "object",
+        "title": "Licencias.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Liviana": {
+                    "type": "boolean"
+                  },
+                  "Pesada": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Licencias.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Licencias>"
+      },
+      "Licencias.Filter1": {
+        "type": "object",
+        "title": "Licencias.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Licencias.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Liviana": {
+                    "type": "boolean"
+                  },
+                  "Pesada": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Licencias.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Licencias>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "Posiciones.Filter": {
+        "type": "object",
+        "title": "Posiciones.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Latitud": {
+                    "type": "boolean"
+                  },
+                  "Longitud": {
+                    "type": "boolean"
+                  },
+                  "Altitud": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Posiciones.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Posiciones>"
+      },
+      "Posiciones.Filter1": {
+        "type": "object",
+        "title": "Posiciones.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Posiciones.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Latitud": {
+                    "type": "boolean"
+                  },
+                  "Longitud": {
+                    "type": "boolean"
+                  },
+                  "Altitud": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Posiciones.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Posiciones>"
+      },
+      "Rutas.Filter": {
+        "type": "object",
+        "title": "Rutas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Distancia": {
+                    "type": "boolean"
+                  },
+                  "lugar_inicio": {
+                    "type": "boolean"
+                  },
+                  "lugar_final": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Rutas.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Rutas>"
+      },
+      "Rutas.Filter1": {
+        "type": "object",
+        "title": "Rutas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Rutas.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Distancia": {
+                    "type": "boolean"
+                  },
+                  "lugar_inicio": {
+                    "type": "boolean"
+                  },
+                  "lugar_final": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Rutas.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Rutas>"
+      },
+      "TipoVehiculo.Filter": {
+        "type": "object",
+        "title": "TipoVehiculo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "pickup": {
+                    "type": "boolean"
+                  },
+                  "camion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "TipoVehiculo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<TipoVehiculo>"
+      },
+      "TipoVehiculo.Filter1": {
+        "type": "object",
+        "title": "TipoVehiculo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "TipoVehiculo.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "pickup": {
+                    "type": "boolean"
+                  },
+                  "camion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "TipoVehiculo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<TipoVehiculo>"
+      },
+      "Transportistas.Filter": {
+        "type": "object",
+        "title": "Transportistas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Nombre": {
+                    "type": "boolean"
+                  },
+                  "Licencias": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Transportistas.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Transportistas>"
+      },
+      "Transportistas.Filter1": {
+        "type": "object",
+        "title": "Transportistas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Transportistas.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "Nombre": {
+                    "type": "boolean"
+                  },
+                  "Licencias": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Transportistas.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Transportistas>"
+      },
+      "Vehiculos.Filter": {
+        "type": "object",
+        "title": "Vehiculos.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id_placa": {
+                    "type": "boolean"
+                  },
+                  "Color": {
+                    "type": "boolean"
+                  },
+                  "Marca": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id_placa"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Vehiculos.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Vehiculos>"
+      },
+      "Vehiculos.Filter1": {
+        "type": "object",
+        "title": "Vehiculos.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Vehiculos.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id_placa": {
+                    "type": "boolean"
+                  },
+                  "Color": {
+                    "type": "boolean"
+                  },
+                  "Marca": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id_placa"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Vehiculos.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Vehiculos>"
+      }
+    },
+    "securitySchemes": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "jwt": []
+    }
+  ]
+}
